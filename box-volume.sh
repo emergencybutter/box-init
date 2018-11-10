@@ -14,7 +14,6 @@ SIZE_G=$1
 VOLUME_NAME=$2
 
 fallocate -l ${SIZE}G /mnt/"${VOLUME_NAME}"
-dd if=/dev/zero of=/mnt/"${VOLUME_NAME}" bs=$((1024*1024)) count=$((1024*${SIZE_G})) > /dev/null
 mkdir /mnt/ram
 mount -t ramfs /dev/ram /mnt/ram
 dd if=/dev/urandom bs=256 count=1 > /mnt/ram/key
