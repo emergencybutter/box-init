@@ -90,6 +90,7 @@ function load-iptables-config() {
 	ip6tables -A FORWARD -j LOG  --log-prefix "FORWARD-v6:"
 }
 
+no-pdiff
 load-iptables-config
 non-interactive-apt update
 non-interactive-apt dist-upgrade

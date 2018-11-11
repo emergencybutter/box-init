@@ -4,7 +4,7 @@
 
 set -eu
 
-function no-pdiffs() {
+function no-pdiff() {
 	echo 'Acquire::PDiffs "false";' > /etc/apt/apt.conf.d/50pdiff
 }
 
