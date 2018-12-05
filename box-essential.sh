@@ -30,8 +30,7 @@ function load-iptables-config() {
 	iptables -A INPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT
 	iptables -A INPUT -p icmp --icmp-type 8 -m state --state NEW -j ACCEPT
 
-	iptables -A FORWARD -i tun0 -j ACCEPT
-	iptables -tnat -A POSTROUTING -o eth0 -j MASQUERADE
+	iptables -tnat -A POSTROUTING -o ens2 -j MASQUERADE
 
 	# Log
 	iptables -A INPUT -j LOG --log-prefix "INPUT:"

@@ -14,3 +14,7 @@ printf 'Package: *\nPin: release a=unstable\nPin-Priority: 150\n' \
 non-interactive-apt update
 non-interactive-apt install linux-headers-$(uname -r)
 non-interactive-apt install wireguard
+
+iptables -A INPUT -p udp --dport 51820 -m state --state NEW -j ACCEPT
+iptables -A FORWARD -i wg0 -j ACCEPT
+echo 1 > /proc/sys/net/ipv4/ip_forward
