@@ -91,6 +91,8 @@ function load-iptables-config() {
 
 no-pdiff
 load-iptables-config
+non-interactive-apt remove fio unattended-upgrades python3-apt grub-efi-amd64 grub-efi-amd64-bin libglib2.0-0 librbd1 shared-mime-info grub2-common librados2 python-yaml grub-common os-prober python-apt curl python python-minimal mosh python3 python3-minimal perl rename ntp sysstat tmux tcpdump bc bootlogd ethstatus htop ioping iperf lsof make mg netcat ntpdate haveged locate netcat rsync screen socat sudo shunit2
+non-interactive-apt autoremove
 non-interactive-apt update
 non-interactive-apt dist-upgrade
-non-interactive-apt install iptables-persistent
+non-interactive-apt install iptables-persistent cryptsetup-bin
