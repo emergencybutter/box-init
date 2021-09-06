@@ -13,7 +13,7 @@ fi
 SIZE_G=$1
 VOLUME_NAME=$2
 
-fallocate -l ${SIZE}G /mnt/"${VOLUME_NAME}"
+fallocate -l ${SIZE_G}G /mnt/"${VOLUME_NAME}"
 mkdir /mnt/ram
 mount -t ramfs /dev/ram /mnt/ram
 dd if=/dev/urandom bs=256 count=1 > /mnt/ram/key
